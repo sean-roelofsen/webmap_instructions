@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webmap Guide</title>
+<style>
+    /* General styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Container for the collapsible headings */
+    .collapsible-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    /* Style for collapsible headings */
+    .collapsible {
+        background-color: #f1f1f1;
+        color: #333;
+        cursor: pointer;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+    }
+    .spacer {
+    flex-grow: 1;
+}
+
+    /* Icon */
+    .arrow::before {
+        content: "\25B6"; /* Unicode for right arrow */
+        color: #777;
+        font-weight: bold;
+        float: right;
+    }
+
+    /* Icon for active state */
+    .active .arrow::before {
+        content: "\25BC"; /* Unicode for down arrow */
+    }
+
+    /* Content inside collapsible */
+    .content {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: #f1f1f1;
+    }
+
+    .collapsible img {
+    width: 30px; /* Set the width to your desired size for all images */
+    height: auto; /* Allow the height to adjust based on the width */
+    object-fit: cover; /* Ensure the image covers the specified dimensions */
+    margin-right: 10px;
+}
+
+    .tall-image {
+    height: 60px; /* Set the height to 100px for specific images */
+    margin-right: 10px;
+}
+
+
+    /* Mobile styles */
+    @media screen and (max-width: 600px) {
+        .collapsible-container {
+            padding: 5px;
+        }
+
+        .collapsible {
+            font-size: 14px;
+        }
+
+        .content {
+            padding: 0 10px;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="collapsible-container">
+<h2>Webmap Guide and Instructions</h2>
+
+     <!-- Collapsible 1 -->
+    <button class="collapsible"><img class="tall-image" img src="https://i.imgur.com/gmK2bXZ.png" alt="measure">Measuring Tool<span class="spacer"></span>
+    <span class="arrow"></span>
+    </button>
+    <div class="content">
+        <p>Paragraph 1</p>
+    </div>
+
+    <!-- Collapsible 2 -->
+    <button class="collapsible"><img src="https://i.imgur.com/hqy9Lb6.png" alt="search">Address Geo-Search<span class="spacer"></span>
+    <span class="arrow"></span>
+    </button>
+    <div class="content">
+        <p>Paragraph 2</p>
+    </div>
+
+    <!-- Collapsible 3 -->
+    <button class="collapsible"><img class="tall-image" img src="https://i.imgur.com/X8ZcQN2.png" alt="zoom_home">Home & Zoom Control<span class="spacer"></span>
+    <span class="arrow"></span>
+    </button>
+    <div class="content">
+        <p>Paragraph 3</p>
+    </div>
+
+    <!-- Collapsible 4 -->
+    <button class="collapsible"><img src="https://i.imgur.com/2N7tAc3.png" alt="GPS">GPS Geolocation Tool<span class="spacer"></span>
+    <span class="arrow"></span>
+    </button>
+    <div class="content">
+        <p>Paragraph 4</p>
+    </div>
+
+    <!-- Collapsible 5 -->
+    <button class="collapsible"><img src="https://i.imgur.com/Sogwx8F.png" alt="greenmarker">Draggable Marker<span class="spacer"></span>
+    <span class="arrow"></span>
+    </button>
+    <div class="content">
+        <p>Paragraph 5</p>
+    </div>
+
+    <!-- Collapsible 6 -->
+    <button class="collapsible"><img src="https://i.imgur.com/AFjeF0p.png" alt="contacts">1-Touch Contacts List<span class="spacer"></span>
+    <span class="arrow"></span>
+    </button>
+    <div class="content">
+        <p>Paragraph 6</p>
+    </div>
+
+    <!-- Collapsible 7 -->
+    <button class="collapsible"><img src="https://i.imgur.com/E3ooaZg.png" alt="weather">Real-Time Weather & Air Quality Data<span class="spacer"></span>
+    <span class="arrow"></span>
+    </button>
+    <div class="content">
+        <p>Paragraph 7</p>
+    </div>
+
+    <!-- Collapsible 8 -->
+    <button class="collapsible"><img src="https://i.imgur.com/9UJPPCE.png" alt="refresh">Refresh/Reload Page<span class="spacer"></span>
+    <span class="arrow"></span>
+    </button>
+    <div class="content">
+        <p>Paragraph 8</p>
+    </div>
+
+    <!-- Collapsible 9 -->
+    <button class="collapsible"><img src="https://i.imgur.com/lKFNqLZ.png" alt="trash">Delete All Layers<span class="spacer"></span>
+    <span class="arrow"></span>
+    </button>
+    <div class="content">
+        <p>Paragraph 9</p>
+    </div>
+
+    <!-- Collapsible 10 -->
+    <button class="collapsible"><img src="https://i.imgur.com/B51EhMl.png" alt="info">App Instructions - this page<span class="spacer"></span>
+    <span class="arrow"></span>
+    </button>
+    <div class="content">
+        <p>Paragraph 10</p>
+    </div>
+
+</div>
+
+<script>
+    // Toggle visibility of content when collapsible heading is clicked
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
